@@ -19,7 +19,7 @@ public class Responses {
         return sendMessage;
     }
 
-    public static SendMessage Schedule(Long chatId) throws SQLException, IOException {
+    public static SendMessage schedule(Long chatId) throws SQLException, IOException {
         return getSchedule(chatId, Database.getGroupFromDatabaseByKey(chatId));
     }
 

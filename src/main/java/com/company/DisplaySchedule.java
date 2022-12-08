@@ -26,7 +26,6 @@ public class DisplaySchedule {
         for (int i = 2; i < str.length; i++) {
             if (Pattern.matches("[0-9]", str[i])) {
                 builder.append("\n").append(str[i++]).append(". ").append(str[i++]).append("-").append(str[i++]).append("\n"); // виведення години початку та кінця пари
-
             } else if (str[i].matches("^(http|https|ftp)://.*$")) {
                 builder.append("\n").append(str[i]).append("\n");  // виведення посилання
             } else {

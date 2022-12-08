@@ -31,7 +31,7 @@ public class Bot extends TelegramLongPollingBot {
                 break;
             case "Розклад":
                 try {
-                    execute(Responses.Schedule(chatId));
+                    execute(Responses.schedule(chatId));
                 } catch (TelegramApiException | IOException | SQLException e) {
                     e.printStackTrace();
                 }
@@ -56,60 +56,3 @@ public class Bot extends TelegramLongPollingBot {
         return "5753744462:AAEwHgTrRsow5h25LDob1UTmcIEUEk2acpA";
     }
 }
-
-/*    public void onUpdateReceived(Update update) {
-
-        Long chatId = update.getMessage().getChatId();
-        SendMessage send;
-        String dateTo;
-        String dateFrom;
-        if (update.getMessage().getText().equals("/start")) {
-            try {
-                execute(Message.getStartMessage(chatId));
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
-        } else if (update.getMessage().getText().equals("Змінити групу")) {
-            String text = "Введіть вашу групу. Наступного разу достатньо клікнути кнопку \"Розклад\", щоб отримати розклад занять. Якщо необхідно змінити групу, натисніть кнопку \"Змінити групу\"";
-            send = new SendMessage();
-            try {
-                send.setText(text);
-                send.setChatId(String.valueOf(chatId));
-                execute(send);
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
-        } else if (update.getMessage().getText().equals("Розклад")) {
-            dateFrom = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(LocalDateTime.now());
-            dateTo = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(LocalDateTime.now());
-            try {
-                String schedule = new HttpService().getSchedule(Database.getGroupFromDatabaseByKey(chatId), dateFrom, dateTo);
-                send = new SendMessage();
-                send.setText(schedule);
-                send.setChatId(String.valueOf(chatId));
-                execute(send);
-            } catch (TelegramApiException | IOException | SQLException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                String group = update.getMessage().getText();
-                dateFrom = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(LocalDateTime.now());
-                dateTo = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(LocalDateTime.now());
-                String schedule = new HttpService().getSchedule(group, dateFrom, dateTo);
-                send = new SendMessage();
-                send.setText(schedule);
-                send.setChatId(String.valueOf(chatId));
-                execute(send);
-
-                if (!Database.getGroupFromDatabaseByKey(chatId).equals(group)) {
-                    Database.updateGroupInDatabase(chatId, group);
-                } else {
-                    Database.addChatIdAndGroupToDatabase(chatId, group);
-                }
-            } catch (TelegramApiException | IOException | SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    */
