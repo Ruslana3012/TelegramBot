@@ -20,14 +20,16 @@ public class Responses {
     }
 
     public static SendMessage schedule(Long chatId) throws SQLException, IOException {
-        return getSchedule(chatId, Database.getGroupFromDatabaseByKey(chatId));
+        Database database = new Database();
+        return getSchedule(chatId, database.getGroupFromDatabaseByKey(chatId));
     }
 
     public static SendMessage newGroup(Long chatId, String group) throws IOException, SQLException {
-        if (!Database.getGroupFromDatabaseByKey(chatId).equals(group)) {
-            Database.updateGroupInDatabase(chatId, group);
+        Database database = new Database();
+        if (!database.getGroupFromDatabaseByKey(chatId).equals(group)) {
+            database.updateGroupInDatabase(chatId, group);
         } else {
-            Database.addChatIdAndGroupToDatabase(chatId, group);
+            database.addChat_idAndGroup_name(chatId, group);
         }
 
         return getSchedule(chatId, group);

@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.company.TelegramBot" table="telegrambot" catalog="telegram_bot_schedule">
+        <id name="chat_id" type="long" column="chat_id"/>
+
+        <property name="group_name" type="string" column="group_name"/>
+    </class>
+</hibernate-mapping>
