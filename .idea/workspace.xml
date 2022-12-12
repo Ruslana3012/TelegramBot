@@ -29,6 +29,10 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/company/TelegramBotInterface.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/TelegramBot.hbm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/company/TelegramBot.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/company/TelegramBotInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapping/TelegramBot.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
@@ -204,7 +208,7 @@
       <workItem from="1667480088144" duration="123636000" />
       <workItem from="1669996974727" duration="55721000" />
       <workItem from="1670579093631" duration="28504000" />
-      <workItem from="1670831953757" duration="12807000" />
+      <workItem from="1670831953757" duration="13465000" />
     </task>
     <servers />
   </component>
